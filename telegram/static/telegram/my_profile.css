@@ -1,0 +1,106 @@
+/* -------------------- فونت -------------------- */
+@font-face {
+    font-family: 'IRANSans';
+    src: url('/static/fonts/IRANSans.woff') format('woff');
+}
+
+body {
+    font-family: 'IRANSans', sans-serif;
+    margin: 0;
+    padding: 0;
+
+    /* بکگراند بنفش + نارنجی */
+    background: linear-gradient(135deg, #5a1ea6, #ff8b2e);
+    background-attachment: fixed;
+}
+
+/* -------------------- کانتینر پروفایل -------------------- */
+.profile-container {
+    width: 40%;
+    min-width: 480px;
+    margin: 70px auto;
+    padding: 30px;
+
+    background: #ffffffee;
+    border-radius: 15px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.25);
+
+    color: #222;
+}
+
+/* -------------------- عنوان -------------------- */
+.profile-container h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* -------------------- عکس پروفایل -------------------- */
+.profile-container img {
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 12px;
+    border: 3px solid #a14fff;
+}
+
+/* -------------------- فرم -------------------- */
+.profile-container form input,
+.profile-container form select,
+.profile-container form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+
+    border-radius: 10px;
+    border: 1px solid #bfbfbf;
+
+    font-size: 15px;
+    color: #333;
+    background: #f9f9f9;
+
+    outline: none;
+    transition: 0.25s ease;
+}
+
+.profile-container form input:focus {
+    border-color: #a14fff;
+    box-shadow: 0 0 6px rgba(161, 79, 255, 0.5);
+}
+
+/* -------------------- دکمه ثبت -------------------- */
+.profile-container form input[type="submit"] {
+    background: linear-gradient(135deg, #7d2cff, #ff8600);
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.profile-container form input[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* -------------------- دکمه خروج -------------------- */
+.logout-btn {
+    display: block;
+    text-align: center;
+
+    margin-top: 20px;
+    padding: 12px 0;
+
+    border-radius: 10px;
+    background: #ff4747;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.25s ease;
+}
+
+.logout-btn:hover {
+    background: #e60000;
+    transform: translateY(-3px);
+}

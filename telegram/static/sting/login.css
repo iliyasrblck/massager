@@ -1,0 +1,83 @@
+/* login.css */
+
+/* بک‌گراند کل صفحه و تنظیمات کلی */
+body.login-page {
+    background-color: #121212; /* رنگ تیره اصلی */
+    color: #ffffff; /* متن روشن */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* کل ارتفاع صفحه */
+    margin: 0;
+}
+
+/* کانتینر فرم لاگین */
+.login-container {
+    background-color: #1e1e1e; /* کمی روشن‌تر از بک‌گراند اصلی */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    width: 350px;
+    text-align: center;
+}
+
+/* تیتر فرم */
+.login-container h1 {
+    margin-bottom: 25px;
+    color: #ffffff;
+    font-size: 28px;
+}
+
+/* استایل فرم و فیلدها */
+.login-container form input[type="text"],
+.login-container form input[type="password"],
+.login-container form input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* دکمه ورود */
+.login-container form input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4caf50; /* سبز */
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-container form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* لینک‌ها */
+.login-container a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #90caf9; /* رنگ آبی روشن برای لینک‌ها */
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+/* پیام‌ها */
+.login-container li {
+    list-style: none;
+    color: #f44336; /* قرمز برای خطاها */
+    margin-bottom: 5px;
+    font-size: 14px;
+}

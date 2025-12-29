@@ -1,0 +1,102 @@
+{% extends 'base/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'telegram/chat_lst.css' %}">
+{% block title %}چت{% endblock %}
+
+{% block content %}
+
+<form method="post" action="{% url 'telegram:block_user' other_user.username %}">
+    {% csrf_token %}
+    <button type="submit">
+        {% if chat.user1 == request.user and chat.user1_blocked_user2 %}
+            آنبلاک کاربر
+        {% elif chat.user2 == request.user and chat.user2_blocked_user1 %}
+            آنبلاک کاربر
+        {% else %}
+            بلاک کاربر
+        {% endif %}
+    </button>
+</form>
+
+<img src="{{ other_user.photo_profile.url }}" alt="profile" width="70" height="70">
+<h2><a href="{% url 'telegram:chat_profile' other_user.username %}">{{ other_user.username }}</a></h2>
+
+<div id="messages_list">
+    {% for massage in massages %}
+        <p>{{ massage.sender }}: {{ massage.text }}</p>
+        {% if massage.pic %}
+            <img src="{{ massage.pic.url }}" alt="image" width="150">
+        {% endif %}
+        <span class="msg-time">{{ massage.create_at }}</span>
+    {% endfor %}
+</div>
+
+{% if chat.user1 == request.user %}
+    {% if chat.user2_blocked_user1 %}
+        <p>شما توسط {{ other_user.username }} مسدود شده اید.</p>
+    {% else %}
+        <form id="chat-form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="text" placeholder="پیام">
+            <input type="file" name="pic" accept="image/*">
+            <button type="submit">ارسال</button>
+        </form>
+    {% endif %}
+{% else %}
+    {% if chat.user1_blocked_user2 %}
+        <p>شما توسط {{ other_user.username }} مسدود شده اید.</p>
+    {% else %}
+        <form id="chat-form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="text" placeholder="پیام">
+            <input type="file" name="pic" accept="image/*">
+            <button type="submit">ارسال</button>
+        </form>
+    {% endif %}
+{% endif %}
+
+<script>
+document.getElementById("chat-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = this;
+    const formData = new FormData(form);
+
+    const csrfToken = form.querySelector('[name=csrfmiddlewaretoken]').value;
+
+    fetch("{% url 'telegram:privet_chat' other_user.username %}", {
+        method: "POST",
+        body: formData,
+        headers: {
+            "X-CSRFToken": csrfToken
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            const messagesBox = document.getElementById("messages_list");
+
+            let imgHtml = '';
+            if (data.message.pic_url) {
+                imgHtml = `<img src="${data.message.pic_url}" width="150">`;
+            }
+
+            messagesBox.innerHTML += `
+                <p>${data.message.sender}: ${data.message.text}</p>
+                ${imgHtml}
+                <span class="msg-time">${data.message.time}</span>
+            `;
+
+            form.querySelector('input[name="text"]').value = "";
+            form.querySelector('input[name="pic"]').value = "";
+        } else {
+            alert(data.error);
+        }
+    })
+    .catch(error => {
+        console.error("AJAX ERROR:", error);
+    });
+});
+</script>
+
+{% endblock %}

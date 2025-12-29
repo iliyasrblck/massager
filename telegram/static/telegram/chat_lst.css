@@ -1,0 +1,93 @@
+/* 📌 فونت عمومی */
+@font-face {
+    font-family: 'IRANSans';
+    src: url('/static/fonts/IRANSans.woff') format('woff');
+}
+
+body {
+    font-family: 'IRANSans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f2f5; /* یک رنگ ساده برای کل سایت */
+}
+
+.chat-list-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    min-height: 100vh;
+}
+
+/* 🔵 کانتینر لیست چت */
+.chat-list {
+    width: 90%;
+    max-width: 750px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* 🟦 هر آیتم چت */
+.chat-item {
+    padding: 18px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    transition: 0.25s ease-in-out;
+    color: #fff;
+}
+
+.chat-item:last-child {
+    border-bottom: none;
+}
+
+/* ✨ افکت هاور */
+.chat-item:hover {
+    background: rgba(255,255,255,0.25);
+    border-radius: 14px;
+    transform: translateX(-6px);
+    backdrop-filter: blur(4px);
+}
+
+/* 🧿 لینک نام کاربر */
+.chat-item a {
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #89cff0;
+    transition: 0.2s ease;
+}
+
+.chat-item a:hover {
+    color: #ffffff;
+}
+
+/* 📝 متن آخرین پیام */
+.chat-item p {
+    margin: 7px 0;
+    font-size: 15px;
+    color: #4a2525;
+}
+
+.chat-time {
+    font-size: 13px;
+    color: #ff0000 !important;
+    direction: rtl;
+    text-align: right;
+}
+
+/* ⭐ اسکرول زیبا */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.35);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}

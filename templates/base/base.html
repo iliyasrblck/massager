@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+{#    <link rel="stylesheet" href="{% static 'sting/change_password.css' %}">#}
+{#    <link rel="stylesheet" href="{% static 'sting/check_otp.css' %}">#}
+{#<link rel="stylesheet" href="{% static 'sting/gmail_write.css' %}">#}
+{#<link rel="stylesheet" href="{% static 'sting/login.css' %}">#}
+{#<link rel="stylesheet" href="{% static 'sting/singup.css' %}">#}
+{#<link rel="stylesheet" href="{% static 'telegram/my_profile.css' %}">#}
+{#<link rel="stylesheet" href="{% static 'telegram/chat.css' %}">#}
+{#<link rel="stylesheet" href="{% static 'telegram/chat_lst.css' %}">#}
+
+
+
+</head>
+<body class="{% block body_class %}{% endblock %}">
+
+    {% include 'base/heder.html'  %}
+    {% block content %}{% endblock %}
+    {% include 'base/foter.html' %}
+</body>
+</html>

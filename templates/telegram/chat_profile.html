@@ -1,0 +1,53 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}پروفایل{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+
+    <h2>پروفایل {{ user.username }}</h2>
+
+    {% if user.photo_profile %}
+        <img src="{{ user.photo_profile.url }}" alt="profile" width="150" height="150">
+
+    {% else %}
+        <p>پروفایل ندارد</p>
+    {% endif %}
+
+    {% if user.first_name %}
+        <p>نام :{{ user.first_name}}</p>
+        <p></p>
+
+    {% else %}
+        <p>نام :ندارد</p>
+
+    {% endif %}
+
+    {% if user.last_name %}
+        <p>نام خانوادگی :{{ user.last_name}}</p>
+
+
+    {% else %}
+        <p>نام خانوادگی :ندارد</p>
+
+    {% endif %}
+
+    {% if user.bio %}
+        <p>بیو :{{ user.bio}}</p>
+
+
+    {% else %}
+        <p>بیو :ندارد</p>
+
+    {% endif %}
+
+    {% if user.birth_date %}
+       <p>{{ user.birth_date }}</p>
+
+    {% else %}
+        <p></p>
+    {% endif %}
+
+
+
+{% endblock %}

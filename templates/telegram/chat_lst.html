@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'telegram/chat_lst.css' %}">
+{% block title %}لیست چت‌ها{% endblock %}
+
+{% block content %}
+
+
+<div class="chat-list-wrapper">
+    <div class="chat-list">
+    {% for chat in chats %}
+        <div class="chat-item">
+            {% if request.user == chat.user1 %}
+                <a href="{% url 'telegram:privet_chat' chat.user2.username %}">{{ chat.user2 }}</a>
+                <img src="{{ chat.user2.photo_profile.url }}" alt="profile" width="70" height="70">
+            {% else %}
+                <a href="{% url 'telegram:privet_chat' chat.user1.username %}">{{ chat.user1 }}</a>
+                <img src="{{ chat.user1.photo_profile.url }}" alt="profile" width="70" height="70">
+            {% endif %}
+
+            <p>{{ chat.last_mas|truncatewords:5 }}</p>
+            <p class="chat-time">{{ chat.update_chat }}</p>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

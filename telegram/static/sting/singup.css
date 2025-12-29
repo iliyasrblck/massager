@@ -1,0 +1,87 @@
+/* signup.css */
+
+/* بک‌گراند کل صفحه */
+body.login-page {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* کانتینر فرم ثبت‌نام */
+.signup-container {
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    padding: 45px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+    width: 400px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.signup-container:hover {
+    transform: scale(1.02);
+}
+
+/* تیتر فرم */
+.signup-container h1 {
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: #ffffff;
+}
+
+/* لیست پیام‌ها */
+.messages li {
+    list-style: none;
+    color: #f44336; /* قرمز برای خطاها */
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* فیلدهای فرم */
+.signup-container form input[type="text"],
+.signup-container form input[type="email"],
+.signup-container form input[type="password"] {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* دکمه ادامه */
+.signup-container form input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #4caf50;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.signup-container form input[type="submit"]:hover {
+    background-color: #45a049;
+    transform: scale(1.03);
+}
+
+/* لینک‌ها */
+.signup-container a {
+    color: #90caf9;
+    text-decoration: none;
+}
+
+.signup-container a:hover {
+    text-decoration: underline;
+}

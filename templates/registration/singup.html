@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+
+{% block title %}ثبت نام{% endblock %}
+
+{% block body_class %}login-page{% endblock %}
+
+{% block content %}
+<div class="signup-wrapper">
+
+    <!-- سمت چپ -->
+    <div class="signup-left">
+        <h2>به سایت ما خوش آمدید!</h2>
+        <p>ثبت نام کنید و از امکانات ما استفاده کنید.</p>
+    </div>
+
+    <!-- سمت راست: فرم -->
+    <div class="signup-right">
+        <div class="signup-container">
+
+            <h1>ثبت نام</h1>
+
+            {% if messages %}
+                <ul class="messages">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="ادامه">
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

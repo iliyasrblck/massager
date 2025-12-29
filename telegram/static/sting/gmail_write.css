@@ -1,0 +1,79 @@
+/* email.css */
+
+/* بک‌گراند کل صفحه */
+body.email-page {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* کانتینر فرم ایمیل */
+.email-container {
+    background-color: #1f1f1f;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    width: 400px;
+    text-align: center;
+}
+
+/* تیتر فرم */
+.email-container h1 {
+    margin-bottom: 25px;
+    color: #ffffff;
+    font-size: 26px;
+}
+
+/* لیست پیام‌ها */
+.messages li {
+    list-style: none;
+    color: #f44336; /* قرمز برای خطا */
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* فیلدهای فرم */
+.email-container form input[type="text"],
+.email-container form input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* دکمه ثبت */
+.email-container form input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4caf50;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.email-container form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* لینک‌ها و دیگر عناصر در صورت نیاز */
+.email-container a {
+    color: #90caf9;
+    text-decoration: none;
+}
+
+.email-container a:hover {
+    text-decoration: underline;
+}

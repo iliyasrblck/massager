@@ -1,0 +1,142 @@
+/* ================================
+   📌 صفحه چت – طرح شیشه‌ای آبی
+================================ */
+
+
+/* ===========================
+   🔥 پس‌زمینه بنفش + نارنجی
+   مناسب برای کل سایت یا صفحه چت
+=========================== */
+
+.bg-purple-orange {
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    background: radial-gradient(circle at top right, rgba(255,154,0,0.45), transparent 50%),
+                radial-gradient(circle at bottom left, rgba(255,102,255,0.35), transparent 55%),
+                linear-gradient(135deg, #4b1f73, #2d0b4e);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* کل صفحه */
+.chat-wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    margin-top: 40px;
+    padding: 20px;
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    color: #fff;
+}
+
+/* عنوان */
+.chat-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+/* 📌 باکس پیام‌ها – بزرگ‌تر */
+#chat-box {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 16px;
+    height: 600px;   /* ← افزایش ارتفاع */
+    overflow-y: auto;
+    margin-bottom: 20px; /* فاصله با فرم پیام */
+}
+/* پیام‌ها */
+/* فرم ارسال پیام – عمودی و تمیز */
+.chat-form {
+    display: flex;
+    flex-direction: column;   /* ← عمودی */
+    gap: 10px;
+}
+/* پیام من (چپ) */
+.my-msg {
+    background: rgba(0, 255, 150, 0.35);
+    margin-left: auto;
+    text-align: left;
+    border-bottom-left-radius: 2px;
+}
+
+/* پیام طرف مقابل (راست) */
+.other-msg {
+    background: rgba(255, 255, 255, 0.25);
+    margin-right: auto;
+    text-align: right;
+    border-bottom-right-radius: 2px;
+}
+
+/* متن پیام */
+.msg-text {
+    margin: 0;
+    color: #000;      /* ← مشکی */
+}
+
+/* زمان پیام */
+.msg-time {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    opacity: 0.9;
+    color: #493232;      /* ← مشکی */
+}
+
+
+/* فرم ارسال پیام */
+/* فرم ارسال پیام – عمودی و تمیز */
+.chat-form {
+    display: flex;
+    flex-direction: column;   /* ← عمودی */
+    gap: 10px;
+}
+
+/* فیلد متن */
+.chat-form textarea,
+.chat-form input[type="text"] {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 15px;
+}
+
+
+.chat-form textarea,
+.chat-form input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+/* دکمه ارسال */
+/* دکمه ارسال – پایین، مرتب و خوش‌فرم */
+.send-btn {
+    width: 150px;               /* اندازه مناسب */
+    margin-right: auto;         /* چسبیدن به چپ */
+    padding: 12px 16px;
+    background: #89cff0;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.send-btn:hover {
+    background: #4b6cb7;
+    color: #fff;
+}

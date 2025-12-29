@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}پروفایل{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+
+    <h2>پروفایل</h2>
+
+    {% if user.photo_profile %}
+        <img src="{{ user.photo_profile.url }}" alt="profile" width="150" height="150">
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" value="ثبت">
+    </form>
+
+    <a href="{% url 'telegram:logout' %}" class="logout-btn">خروج از حساب</a>
+</div>
+{% endblock %}
